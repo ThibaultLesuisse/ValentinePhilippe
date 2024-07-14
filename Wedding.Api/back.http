@@ -1,0 +1,17 @@
+@back_HostAddress = http://localhost:5014
+
+POST {{back_HostAddress}}/rsvp/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "lesuisse.thibault@gmail.com",
+  "guests": [
+    {
+      "FirstName": "Thibault",
+      "LastName": "Lesuisse",
+      "isVegetarian": false
+    }
+  ]
+}
+###

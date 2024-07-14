@@ -1,0 +1,59 @@
+h1 {
+    font-family: "Work Sans";
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-size: 8em;
+    font-style: normal;
+}
+
+h4 {
+    font-family: "Work Sans";
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 4em;
+}
+
+.btn {
+    border: 2px solid;
+    background-color: #677c43;
+    color: white;
+    height: 5vh;
+    width: 80%;
+    margin-bottom: 5vh;
+    margin-top: 3vh;
+}
+
+.text-container {
+    height: 5vh;
+}
+
+.home-text {
+    font-size: 1.2em;
+}
+
+p {
+    font-family: "Work Sans";
+    font-size: 1.5em;
+    font-weight: 200;
+}
+.phil-border {
+    border-right: 2px solid;
+}
+
+
+@media screen and (max-width: 480px) {
+    p {
+        font-family: "Work Sans";
+        font-size: 1.5em;
+        font-weight: 200;
+        margin: 1em 0.5em 1em 0.5em;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}

@@ -1,0 +1,143 @@
+body {
+    background-color: white;
+    color: black;
+    font-family: "Work Sans";
+}
+
+.main-content {
+    max-width: 60vw;
+    margin-left: 20vw;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 480px) {
+    .main-content {
+        max-width: 90vw;
+        margin: 5vw;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+
+
+ }
+
+
+/* .main-header-image {
+    position: absolute;
+    z-index: -10;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../assets/background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+.center {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    font-size: 6rem;
+}
+
+.main {
+    margin-top: 5vh;
+    width: 50vw;
+}
+
+.navbar {
+    width: 70%;
+}
+
+.navbar-nav {
+    justify-content: space-between;
+} 
+
+.main-container {
+    max-width: 50vw;
+}
+
+.nav-link {
+    color: black;
+}
+
+a {
+    font-family: "Work Sans";
+    font-size: 2em;
+    font-weight: 400;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 9px;
+}
+
+.title-text {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        width: 100%;
+    }
+    .navbar-toggler {
+        width: 100%;
+        border-radius: 0;
+    }
+    a {
+        font-family: "Work Sans";
+        font-size: 1.2em;
+        font-weight: 300;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 9px;
+    }
+    li {
+        margin-top: 2em;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+}
+
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.bd-mode-toggle .dropdown-menu .active .bi {
+    display: block !important;
+}

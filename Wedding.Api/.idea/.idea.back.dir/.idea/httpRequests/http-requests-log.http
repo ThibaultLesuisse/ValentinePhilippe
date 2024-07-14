@@ -1,0 +1,86 @@
+POST http://localhost:5014/rsvp/
+Accept: application/json
+Content-Type: application/json
+Content-Length: 164
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "email": "lesuisse.thibault@gmail.com",
+  "guests": [
+    {
+      "FirstName": "Thibault",
+      "LastName": "Lesuisse",
+      "isVegetarian": false
+    }
+  ]
+}
+
+###
+
+POST http://localhost:5014/rsvp/
+Accept: application/json
+Content-Type: application/json
+Content-Length: 164
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "email": "lesuisse.thibault@gmail.com",
+  "guests": [
+    {
+      "FirstName": "Thibault",
+      "LastName": "Lesuisse",
+      "isVegetarian": false
+    }
+  ]
+}
+
+<> 2024-07-14T230800.500.txt
+
+###
+
+POST http://localhost:5014/rsvp/
+Accept: application/json
+Content-Type: application/json
+Content-Length: 164
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "email": "lesuisse.thibault@gmail.com",
+  "guests": [
+    {
+      "FirstName": "Thibault",
+      "LastName": "Lesuisse",
+      "isVegetarian": false
+    }
+  ]
+}
+
+<> 2024-07-14T230658.500.txt
+
+###
+
+POST http://localhost:5014/rsvp/
+Accept: application/json
+Content-Type: application/json
+Content-Length: 164
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "email": "lesuisse.thibault@gmail.com",
+  "guests": [
+    {
+      "FirstName": "Thibault",
+      "LastName": "Lesuisse",
+      "isVegetarian": false
+    }
+  ]
+}
+
+<> 2024-07-14T230459.500.txt
+
+###
+

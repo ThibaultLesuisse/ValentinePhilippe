@@ -1,0 +1,43 @@
+System.InvalidOperationException: The type of navigation 'Rsvp.Guests' is 'SelectListIterator<Guest, Guest>' which does not implement 'ICollection<Guest>'. Collection navigations must implement 'ICollection<>' of the target type.
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ClrICollectionAccessor`3.GetCollection(Object instance)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ClrICollectionAccessor`3.GetOrCreateCollection(Object instance, Boolean forMaterialization)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ClrICollectionAccessor`3.Add(Object entity, Object value, Boolean forMaterialization)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.AddToCollection(INavigationBase navigationBase, Object value, Boolean forMaterialization)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.NavigationFixer.AddToCollection(InternalEntityEntry entry, INavigationBase navigation, InternalEntityEntry value, Boolean fromQuery)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.NavigationFixer.SetReferenceOrAddToCollection(InternalEntityEntry entry, INavigationBase navigation, InternalEntityEntry value, Boolean fromQuery)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.NavigationFixer.ToDependentFixup(InternalEntityEntry dependentEntry, InternalEntityEntry principalEntry, IForeignKey foreignKey, Boolean fromQuery)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.NavigationFixer.InitialFixup(InternalEntityEntry entry, InternalEntityEntry duplicateEntry, Boolean fromQuery)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.NavigationFixer.StateChanged(InternalEntityEntry entry, EntityState oldState, Boolean fromQuery)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryNotifier.StateChanged(InternalEntityEntry entry, EntityState oldState, Boolean fromQuery)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.FireStateChanged(EntityState oldState)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges, Boolean modifyProperties)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState entityState, Boolean acceptChanges, Boolean modifyProperties, Nullable`1 forceStateWhenUnknownKey, Nullable`1 fallbackState)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.PaintAction(EntityEntryGraphNode`1 node)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityEntryGraphIterator.TraverseGraph[TState](EntityEntryGraphNode`1 node, Func`2 handleNode)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.AttachGraph(InternalEntityEntry rootEntry, EntityState targetState, EntityState storeGeneratedWithKeySetTargetState, Boolean forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.NavigationFixer.NavigationCollectionChanged(InternalEntityEntry entry, INavigationBase navigationBase, IEnumerable`1 added, IEnumerable`1 removed)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryNotifier.NavigationCollectionChanged(InternalEntityEntry entry, INavigationBase navigationBase, IEnumerable`1 added, IEnumerable`1 removed)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectNavigationChange(InternalEntityEntry entry, INavigationBase navigationBase)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.LocalDetectChanges(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectChanges(IStateManager stateManager)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ChangeTracker.DetectChanges()
+   at Microsoft.EntityFrameworkCore.DbContext.TryDetectChanges()
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at back.Application.AddRsvpCommandHandler.Handle(AddRsvpCommand request, CancellationToken cancellationToken) in /home/thibault/Code/Philippe/back/Application/AddRsvpCommandHandler.cs:line 36
+   at back.Endpoints.RsvpEndpoints.<>c.<<MapRsvp>b__0_0>d.MoveNext() in /home/thibault/Code/Philippe/back/Endpoints/RsvpEndpoints.cs:line 37
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.ExecuteTaskResult[T](Task`1 task, HttpContext httpContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+
+HEADERS
+=======
+Accept: application/json
+Host: localhost:5014
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Content-Type: application/json
+Content-Length: 164

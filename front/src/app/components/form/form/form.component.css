@@ -1,0 +1,15 @@
+.btn-primary {
+    background-color: white;
+    color: black;
+    border-color: black;
+    border-radius: 0px;
+    margin-top: 2em;
+    width: 100%;
+}
+
+input.form-control {
+    margin-top: 2em;
+    width: max-content;
+    border-radius: 0;
+    width: 100%;
+}

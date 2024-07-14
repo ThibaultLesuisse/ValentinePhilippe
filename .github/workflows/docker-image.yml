@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Docker/Dockerfile --tag thibaultlesuisse/valentine-philippe:latest
+      run: docker build ./Wedding.Api --file Wedding.Api/Docker/Dockerfile --tag thibaultlesuisse/valentine-philippe:latest

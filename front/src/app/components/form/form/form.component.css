@@ -13,3 +13,7 @@ input.form-control {
     border-radius: 0;
     width: 100%;
 }
+
+form {
+    min-width: 50vw !important;
+}

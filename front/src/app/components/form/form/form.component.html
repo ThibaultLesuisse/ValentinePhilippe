@@ -1,9 +1,39 @@
 <!-- user-form.component.html -->
-<div class="mb-3 w-100">
+<div class="mb-3 mt-5 w-100">
   <form [formGroup]="rsvpForm" (submit)="Submit()">
-    <input id="first-name" class="form-control" type="text" formControlName="firstName" placeholder="Voornaam">
-    <input id="last-name" class="form-control" type="text" formControlName="lastName" placeholder="Achternaam">
-    <input id="email" type="email" class="form-control" formControlName="email" placeholder="email">
-    <button type="submit" class="btn btn-primary mt-3" [disabled]="!rsvpForm.valid">Opsturen</button>
+    <input id="first-name" class="form-control" type="text" formControlName="firstName" placeholder="Firstname">
+    <input id="last-name" class="form-control" type="text" formControlName="lastName" placeholder="Lastname">
+    <input id="email" type="email" class="form-control" formControlName="email" placeholder="Email">
+    <div class="form-check mt-4 mb-4">
+      <input class="form-check-input" type="checkbox" formControlName="isVegetarian" value="" id="isVegetarian">
+      <label class="form-check-label" for="isVegetarian">
+        Are you vegetarian?
+      </label>
+    </div>
+    <input id="dietaryComments" type="text" class="form-control" formControlName="dietaryComment"
+      placeholder="Dietary Comments">
+
+    <div class="form-check mt-4">
+      <input class="form-check-input" type="checkbox" (change)="togglePlusOne()" value="" id="plusOne">
+      <label class="form-check-label" for="plusOne">
+        Do you bring a plus one?
+      </label>
+    </div>
+    <div *ngIf="bringsPlusOne" class="mb-4">
+      <input id="partnerFirstName" class="form-control" type="text" formControlName="partnerFirstName"
+        placeholder="Firstname Partner">
+      <input id="partnerLastName" class="form-control" type="text" formControlName="partnerLastName"
+        placeholder="Lastname Partner">
+      <div class="form-check mt-4 mb-4">
+        <input class="form-check-input" type="checkbox" formControlName="partnerIsVegetarian" value=""
+          id="partnerIsVegetarian">
+        <label class="form-check-label" for="partnerIsVegetarian">
+          Is your plusone vegetarian?
+        </label>
+      </div>
+      <input id="dietaryComments" type="text" class="form-control" formControlName="partnerDietaryComments"
+        placeholder="Dietary Comments Partner">
+    </div>
+    <button type="submit" class="btn btn-primary mt-5" [disabled]="!rsvpForm.valid">Send</button>
   </form>
 </div>

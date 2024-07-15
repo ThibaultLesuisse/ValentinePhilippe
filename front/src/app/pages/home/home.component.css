@@ -37,10 +37,19 @@ p {
     font-size: 1.5em;
     font-weight: 200;
 }
-.phil-border {
-    border-right: 2px solid;
+
+.couple-image {
+    max-width: 80%;
+    max-height: 80%;
 }
 
+.phil-border {
+    border-right: 2px black solid;
+}
+
+main {
+    margin-top: 10vh;
+}
 
 @media screen and (max-width: 480px) {
     p {
@@ -48,6 +57,20 @@ p {
         font-size: 1.5em;
         font-weight: 200;
         margin: 1em 0.5em 1em 0.5em;
+    }
+
+    .btn {
+        height: auto;
+        width: 80%;
+    }
+
+    .couple-image {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .home-text {
+        font-size: 1em;
     }
 }
 

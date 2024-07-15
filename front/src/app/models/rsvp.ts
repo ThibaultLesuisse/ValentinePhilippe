@@ -1,5 +1,11 @@
 export interface Rsvp {
+    email: string,
+    guests: Guest[]
+}
+
+export interface Guest {
     firstName: string,
     lastName: string,
-    email: string,
+    isVegetarian: boolean,
+    dietaryComment: string
 }

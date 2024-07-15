@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm" *ngFor="let accomodation of accomodationList">
+        <div class="card mt-4 pe-auto" style="width: 18rem; height: 18rem;"  [style.background-image]="'linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.7)), url(' + accomodation.imageUrl + ')'">
+            <div class="card-body d-flex justify-content-center align-items-center" (click)="onHotelClick(accomodation)">
+              <h5 class="card-title">{{accomodation.name}}</h5>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>

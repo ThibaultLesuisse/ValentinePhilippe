@@ -20,12 +20,15 @@ export class FormComponent {
       firstName: new FormControl(''),
       lastName: new FormControl(''),
       email: new FormControl(''),
-      isVegetarian: new FormControl(false),
       dietaryComment: new FormControl(''),
       partnerFirstName: new FormControl(''),
       partnerLastName: new FormControl(''),
-      partnerIsVegetarian: new FormControl(false),
-      partnerDietaryComments: new FormControl('')
+      partnerDietaryComments: new FormControl(''),
+      street: new FormControl(''),
+      streetNumber: new FormControl(''),
+      postalCode: new FormControl(''),
+      city: new FormControl(''),
+      country: new FormControl('')
     });
 
     async Submit(){
@@ -36,21 +39,16 @@ export class FormComponent {
           {
             firstName: this.rsvpForm.value.firstName ?? '',
             lastName: this.rsvpForm.value.lastName ?? '',
-            isVegetarian: this.rsvpForm.value.isVegetarian ?? false,
             dietaryComment: this.rsvpForm.value.dietaryComment ?? ''
           }
-        ]
-      }
-
-      if(this.bringsPlusOne){
-        rsvp.guests.push(
-          {
-            firstName: this.rsvpForm.value.partnerFirstName ?? '',
-            lastName: this.rsvpForm.value.partnerLastName ?? '',
-            isVegetarian: this.rsvpForm.value.partnerIsVegetarian ?? false,
-            dietaryComment: this.rsvpForm.value.partnerDietaryComments ?? ''
-          }
-        )
+        ],
+        address: {
+          street: this.rsvpForm.value.street ?? '',
+          streetNumber: this.rsvpForm.value.streetNumber ?? '',
+          city: this.rsvpForm.value.city ?? '',
+          postalCode: this.rsvpForm.value.postalCode ?? '',
+          country: this.rsvpForm.value.country ?? ''
+        }
       }
 
       await this.rsvpService.postRvsp(rsvp);

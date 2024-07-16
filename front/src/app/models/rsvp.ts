@@ -1,11 +1,19 @@
 export interface Rsvp {
     email: string,
-    guests: Guest[]
+    guests: Guest[],
+    address: Address
 }
 
 export interface Guest {
     firstName: string,
     lastName: string,
-    isVegetarian: boolean,
     dietaryComment: string
+}
+
+export interface Address {
+    street: string,
+    streetNumber: string,
+    city: string,
+    postalCode: string,
+    country: string
 }

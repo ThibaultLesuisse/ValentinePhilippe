@@ -118,9 +118,8 @@ a {
     }
 }
 
-@media (device-width: 768px) and (max-device-width: 1024px) and (orientation:portrait) 
-{
-    .bd-placeholder-img-lg {
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+            .bd-placeholder-img-lg {
         font-size: 3.5rem;
     }
 
@@ -143,7 +142,7 @@ a {
     }
     a {
         font-family: "Work Sans";
-        font-size: 1.2em;
+        font-size: 1.5em;
         font-weight: 300;
         text-decoration: underline;
         text-decoration-thickness: 2px;

@@ -15,8 +15,8 @@
 }
 
 .card-title {
-    font-size: 2rem;
-    font-weight:300;
+    font-size: 1.7rem;
+    font-weight:400;
 }
 
 .card-body {
@@ -26,8 +26,8 @@
 
 @media screen and (max-width: 480px) {
     .card-title {
-        font-size: 1rem;
-        font-weight:300;
+        font-size: 1.8rem;
+        font-weight:500;        
     }
 }
 
@@ -36,7 +36,7 @@
 @media (device-width: 768px) and (max-device-width: 1024px) and (orientation:portrait) 
 {
     .card-title {
-        font-size: 1rem;
-        font-weight:300;
+        font-size: 1.8rem;
+        font-weight:500;
     }
 }

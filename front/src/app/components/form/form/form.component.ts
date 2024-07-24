@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import { RsvpService } from '../../../services/rsvp.service';
 import { Rsvp } from '../../../models/rsvp';
@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './form.component.css'
 })
 export class FormComponent {
-    rsvpService: RsvpService = Inject(RsvpService);
+    private rsvpService: RsvpService = inject(RsvpService);
     bringsPlusOne: boolean = false;
     formWasSent: boolean = false;
 
@@ -31,7 +31,7 @@ export class FormComponent {
       country: new FormControl('')
     });
 
-    async Submit(){
+    Submit(){
       console.log(this.rsvpService);
       let rsvp: Rsvp = {
         email: this.rsvpForm.value.email ?? '',
@@ -49,11 +49,11 @@ export class FormComponent {
           postalCode: this.rsvpForm.value.postalCode ?? '',
           country: this.rsvpForm.value.country ?? ''
         }
-      }
+      };
 
-      await this.rsvpService.postRvsp(rsvp);
-
-      this.formWasSent = true;
+      this.rsvpService
+      .postRvsp(rsvp)
+      .subscribe(rsvp => this.formWasSent = true);
   }
 
   togglePlusOne(){

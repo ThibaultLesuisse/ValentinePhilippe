@@ -12,6 +12,21 @@ public class RsvpValidator : AbstractValidator<RsvpRequest>
 
         RuleFor(x => x.Guests)
             .NotEmpty()
-            .Must(model => model.Any() && model.Count() <= 2);
+            .Must(model => model.Any() && model.Count() <= 2)
+            .ForEach(x => x.SetValidator(new GuestValidator()));
+    }
+}
+
+public class GuestValidator : AbstractValidator<Guest>
+{
+    public GuestValidator()
+    {
+        RuleFor(x => x.FirstName)
+            .NotEmpty()
+            .MaximumLength(255);
+
+        RuleFor(x => x.LastName)
+            .NotEmpty()
+            .MaximumLength(255);
     }
 }

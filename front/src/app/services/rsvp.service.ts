@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Rsvp } from '../models/rsvp';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -7,23 +9,11 @@ import { Rsvp } from '../models/rsvp';
 export class RsvpService {
   url: string = "http://localhost:5014"
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  async postRvsp(rsvp: Rsvp) : Promise<Rsvp | undefined>{
-    try {
-      const data = await fetch(this.url + 'rsvp', {
-        method: 'POST',
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(rsvp)
-      });
-
-      return await data.json() ?? []; 
-
-    } catch (error) {
-      // Handle error
-      return undefined;
-    }
+  postRvsp(rsvp: Rsvp) : Observable<Rsvp>{
+      return this
+        .http
+        .post<Rsvp>(this.url + '/rsvp', rsvp, { headers:{"content-type": "application/json", "accepts": "application/json"}});
   }
 }

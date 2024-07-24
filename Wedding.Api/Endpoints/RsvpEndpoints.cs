@@ -40,7 +40,8 @@ public static class RsvpEndpoints
                     valid => TypedResults.Ok(),
                     emailExists => TypedResults.Problem(new ProblemDetails()
                         { Detail = "Email is already registered" }));
-            });
+            })
+            .RequireCors();
 
         return group;
     }

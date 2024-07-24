@@ -20,10 +20,13 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Pr
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(cortOptions =>
 {
-    cortOptions.AddDefaultPolicy(new CorsPolicy()
+    cortOptions.AddDefaultPolicy(policy =>
     {
-        Origins = { "localhost", "valentine-philippe.be" },
-        Methods = { "GET", "POST" }
+        policy
+            .WithOrigins("http://localhost:4200", "valentine-philippe.be")
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .SetIsOriginAllowedToAllowWildcardSubdomains();
     });
 });
 
@@ -60,7 +63,7 @@ app.MapRsvp();
 
 app.UseHttpsRedirection();
 
-app.UseCors();
+app.UseCors("");
 app.UseRateLimiter();
 
 app.Run();

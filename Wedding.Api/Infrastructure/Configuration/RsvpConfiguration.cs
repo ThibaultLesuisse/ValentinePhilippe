@@ -12,5 +12,6 @@ public class RsvpConfiguration: IEntityTypeConfiguration<Rsvp>
         
         builder.Property(x => x.Email).IsRequired();
         builder.HasIndex(x => x.Email).IsUnique();
+        builder.OwnsOne(x => x.Address);
     }
 }

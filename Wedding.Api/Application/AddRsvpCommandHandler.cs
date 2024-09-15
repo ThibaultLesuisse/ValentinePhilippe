@@ -22,11 +22,18 @@ public class AddRsvpCommandHandler(WeddingDbContext weddingDbContext)
         var rsvp = new Rsvp
         {
             Email = request.RsvpRequest.Email,
+            Address = new Address
+            {
+                PostalCode = request.RsvpRequest.Address.PostalCode,
+                Street = request.RsvpRequest.Address.Street,
+                City = request.RsvpRequest.Address.City,
+                HouseNumber = request.RsvpRequest.Address.StreetNumber,
+                Country = request.RsvpRequest.Address.Country
+            },
             Guests = request.RsvpRequest.Guests.Select(guest => new Guest()
             {
                 FirstName = guest.FirstName,
                 LastName = guest.LastName,
-                IsVegetarian = guest.isVegetarian,
                 DietaryRestrictions = guest.dietaryRestrictions
             }).ToList()
         };

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class RsvpService {
-  url: string = "http://localhost:5014"
+  url: string = "https://api.valentine-philippe.be"
 
   constructor(private http: HttpClient) { }
 

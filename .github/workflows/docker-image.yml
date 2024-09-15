@@ -14,5 +14,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: docker build ./Wedding.Api --file Wedding.Api/Docker/Dockerfile --tag thibaultlesuisse/valentine-philippe:latest
+    - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: ./Wedding.Api
+          file: ./Wedding.Api/Docker/Dockerfile
+          push: true
+          tags: thibaultlesuisse/valentinephilippeapi:latest
+    - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: ./front
+          file: ./front/docker/Dockerfile
+          push: true
+          tags: thibaultlesuisse/valentinephilippe:latest

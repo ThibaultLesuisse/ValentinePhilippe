@@ -17,7 +17,7 @@ public record Guest
     
     public bool isVegetarian { get; set; }
     
-    public string dietaryRestrictions { get; set; }
+    public string DietaryRestrictions { get; set; }
 }
 
 public record Address(

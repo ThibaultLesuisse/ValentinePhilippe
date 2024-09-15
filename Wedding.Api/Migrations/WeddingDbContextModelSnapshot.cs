@@ -98,15 +98,11 @@ namespace Wedding.Api.Migrations
                                 .IsRequired()
                                 .HasColumnType("nvarchar(max)");
 
-                            b1.Property<string>("HouseNumber")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
-
                             b1.Property<string>("PostalCode")
                                 .IsRequired()
                                 .HasColumnType("nvarchar(max)");
 
-                            b1.Property<string>("Street")
+                            b1.Property<string>("StreetAndHouseNumber")
                                 .IsRequired()
                                 .HasColumnType("nvarchar(max)");
 

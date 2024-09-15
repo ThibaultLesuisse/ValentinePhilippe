@@ -33,7 +33,7 @@ public class AddRsvpCommandHandler(WeddingDbContext weddingDbContext)
             {
                 FirstName = guest.FirstName,
                 LastName = guest.LastName,
-                DietaryRestrictions = guest.dietaryRestrictions
+                DietaryRestrictions = guest.DietaryRestrictions
             }).ToList()
         };
 

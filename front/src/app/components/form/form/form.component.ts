@@ -20,7 +20,7 @@ export class FormComponent {
       firstName: new FormControl(''),
       lastName: new FormControl(''),
       email: new FormControl(''),
-      dietaryComment: new FormControl(''),
+      dietaryRestrictions: new FormControl(''),
       partnerFirstName: new FormControl(''),
       partnerLastName: new FormControl(''),
       streetAndHouseNumber: new FormControl(''),
@@ -37,7 +37,7 @@ export class FormComponent {
           {
             firstName: this.rsvpForm.value.firstName ?? '',
             lastName: this.rsvpForm.value.lastName ?? '',
-            dietaryComment: this.rsvpForm.value.dietaryComment ?? ''
+            dietaryRestrictions: this.rsvpForm.value.dietaryRestrictions ?? ''
           }
         ],
         address: {

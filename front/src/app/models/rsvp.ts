@@ -7,7 +7,7 @@ export interface Rsvp {
 export interface Guest {
     firstName: string,
     lastName: string,
-    dietaryComment: string
+    dietaryRestrictions: string
 }
 
 export interface Address {

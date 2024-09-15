@@ -21,8 +21,7 @@ public record Guest
 }
 
 public record Address(
-    string Street,
-    string StreetNumber,
+    string StreetAndHouseNumber,
     string City,
     string PostalCode,
     string Country);

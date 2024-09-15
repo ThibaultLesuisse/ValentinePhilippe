@@ -23,9 +23,7 @@ export class FormComponent {
       dietaryComment: new FormControl(''),
       partnerFirstName: new FormControl(''),
       partnerLastName: new FormControl(''),
-      partnerDietaryComments: new FormControl(''),
-      street: new FormControl(''),
-      streetNumber: new FormControl(''),
+      streetAndHouseNumber: new FormControl(''),
       postalCode: new FormControl(''),
       city: new FormControl(''),
       country: new FormControl('')
@@ -43,8 +41,7 @@ export class FormComponent {
           }
         ],
         address: {
-          street: this.rsvpForm.value.street ?? '',
-          streetNumber: this.rsvpForm.value.streetNumber ?? '',
+          streetAndHouseNumber: this.rsvpForm.value.streetAndHouseNumber ?? '',
           city: this.rsvpForm.value.city ?? '',
           postalCode: this.rsvpForm.value.postalCode ?? '',
           country: this.rsvpForm.value.country ?? ''

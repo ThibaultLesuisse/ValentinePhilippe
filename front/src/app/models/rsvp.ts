@@ -11,8 +11,7 @@ export interface Guest {
 }
 
 export interface Address {
-    street: string,
-    streetNumber: string,
+    streetAndHouseNumber: string,
     city: string,
     postalCode: string,
     country: string

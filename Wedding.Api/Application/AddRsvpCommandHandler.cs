@@ -25,9 +25,8 @@ public class AddRsvpCommandHandler(WeddingDbContext weddingDbContext)
             Address = new Address
             {
                 PostalCode = request.RsvpRequest.Address.PostalCode,
-                Street = request.RsvpRequest.Address.Street,
+                StreetAndHouseNumber = request.RsvpRequest.Address.StreetAndHouseNumber,
                 City = request.RsvpRequest.Address.City,
-                HouseNumber = request.RsvpRequest.Address.StreetNumber,
                 Country = request.RsvpRequest.Address.Country
             },
             Guests = request.RsvpRequest.Guests.Select(guest => new Guest()

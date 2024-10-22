@@ -1,86 +1,56 @@
-<!-- user-form.component.html -->
-<div class="mb-3 mt-5 w-100">
-  <div *ngIf="formWasSent">
-    <h3>Thank you for your response!</h3>
-  </div>
-  <div *ngIf="!formWasSent">
-    <form [formGroup]="rsvpForm" (submit)="Submit()">
-      <div class="row">
-        <div class="col">
-          <div class="form-floating mb-3">
-            <input id="first-name" class="form-control" type="text" formControlName="firstName" placeholder="Firstname"
-              required>
-            <label for="first-name">Firstname</label>
-          </div>
-        </div>
-        <div class="col">
-          <div class="form-floating mb-3">
-            <input id="last-name" class="form-control" type="text" formControlName="lastName" placeholder="Lastname"
-              required>
-            <label for="last-name">Lastname</label>
-          </div>
-        </div>
-      </div>
-      <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" role="switch" (change)="togglePlusOne()" id="plusOne">
-        <label class="form-check-label" for="plusOne">I bring a plus one</label>
-      </div>
-  
-      <div class="row" *ngIf="bringsPlusOne">
-        <div class="col">
-          <div class="form-floating mb-3">
-            <input id="partnerFirstName" class="form-control" type="text" formControlName="partnerFirstName"
-              placeholder="Firstname Partner">
-            <label for="partnerFirstName">Firstname Partner</label>
-          </div>
-        </div>
-        <div class="col">
-          <div class="form-floating mb-3">
-            <input id="partnerLastName" class="form-control" type="text" formControlName="partnerLastName"
-              placeholder="Lastname Partner">
-            <label for="partnerLastName">Lastname Partner</label>
-          </div>
-        </div>
-      </div>
+<form [formGroup]="rsvpForm" (submit)="Submit()">
+  <div class="row">
+    <div class="col">
       <div class="form-floating mb-3">
-        <input id="email" type="email" class="form-control" formControlName="email" placeholder="Email" required>
-        <label for="email">Email</label>
-      </div>
-      <hr class="mt-4"/>
-      <div class="form-floating mb-3">
-        <input id="streetAndHouseNumber" type="text" class="form-control" formControlName="streetAndHouseNumber" placeholder="Street and number"
+        <input id="first-name" class="form-control" type="text" formControlName="firstName" placeholder="Firstname"
           required>
-        <label for="streetAndHouseNumber">Street & number</label>
+        <label for="first-name">Firstname</label>
       </div>
-  
-      <div class="row">
-        <div class="col">
-          <div class="form-floating mb-3">
-            <input id="postalCode" type="text" class="form-control" formControlName="postalCode" placeholder="Postal Code"
-              required>
-            <label for="postalCode">Postalcode</label>
-          </div>
-        </div>
-        <div class="col">
-          <div class="form-floating mb-3">
-            <input id="city" type="text" class="form-control" formControlName="city" placeholder="City" required>
-            <label for="city">City</label>
-          </div>
-        </div>
-      </div>
-  
+    </div>
+    <div class="col">
       <div class="form-floating mb-3">
-        <input id="country" type="text" class="form-control" formControlName="country" placeholder="Country" required>
-        <label for="country">Country</label>
+        <input id="last-name" class="form-control" type="text" formControlName="lastName" placeholder="Lastname"
+          required>
+        <label for="last-name">Lastname</label>
       </div>
-  
-      <div class="form-floating mb-3 mt-5">
-        <textarea id="dietaryRestrictions" type="text" class="form-control mb-4" formControlName="dietaryRestrictions"
-          placeholder="Dietary Comments"></textarea>
-        <label for="dietaryRestrictions">Dietary Comment (Allergies,..)</label>
-      </div>
-      <button type="submit" class="btn btn-primary mt-5" [disabled]="!rsvpForm.valid || formWasSent">Send</button>
-    </form>
+    </div>
   </div>
-  
-</div>
+  <div class="form-floating mb-3">
+    <input id="email" type="email" class="form-control" formControlName="email" placeholder="Email" required>
+    <label for="email">Email</label>
+  </div>
+  <hr class="mt-4" />
+  <div class="form-floating mb-3">
+    <input id="streetAndHouseNumber" type="text" class="form-control" formControlName="streetAndHouseNumber"
+      placeholder="Street and number" required>
+    <label for="streetAndHouseNumber">Street & number</label>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="form-floating mb-3">
+        <input id="postalCode" type="text" class="form-control" formControlName="postalCode" placeholder="Postal Code"
+          required>
+        <label for="postalCode">Postalcode</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-floating mb-3">
+        <input id="city" type="text" class="form-control" formControlName="city" placeholder="City" required>
+        <label for="city">City</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input id="country" type="text" class="form-control" formControlName="country" placeholder="Country" required>
+    <label for="country">Country</label>
+  </div>
+
+  <div class="form-floating mb-3 mt-5">
+    <textarea id="dietaryRestrictions" type="text" class="form-control mb-4" formControlName="dietaryRestrictions"
+      placeholder="Dietary Comments"></textarea>
+    <label for="dietaryRestrictions">Dietary Comment (Allergies,..)</label>
+  </div>
+  <button type="submit" class="btn btn-primary mt-5" [disabled]="!rsvpForm.valid">Send</button>
+</form>

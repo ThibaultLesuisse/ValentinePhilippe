@@ -1,3 +1,16 @@
 <div class="form">
-    <app-form></app-form>
+    <div *ngIf="isLoading">
+        <div class="spinner-border mt-5" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <div *ngIf="formWasSent && !errors" class="mt-5">
+        <h2>Thank you for your response</h2>
+    </div>
+    <div *ngIf="errors">
+        <div id="error-box" class="alert alert-danger d-none" role="alert">
+            {{ errors }}
+        </div>
+    </div>
+    <app-form *ngIf="!isLoading && !formWasSent && !errors" (FormSubmit)="handleFormSubmit($event)"></app-form>
 </div>

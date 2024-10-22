@@ -12,7 +12,10 @@ public class AddRsvpCommandHandler(WeddingDbContext weddingDbContext)
 {
     public async Task<OneOf<Rsvp, EmailExists>> Handle(AddRsvpCommand request, CancellationToken cancellationToken)
     {
-        var emailExists = await weddingDbContext.Rsvps.AnyAsync(x => x.Email == request.RsvpRequest.Email, cancellationToken);
+        var emailExists = await weddingDbContext
+            .Rsvps
+            .AsNoTracking()
+            .AnyAsync(x => x.Email == request.RsvpRequest.Email, cancellationToken);
 
         if (emailExists)
         {

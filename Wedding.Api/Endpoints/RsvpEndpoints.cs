@@ -20,7 +20,7 @@ public static class RsvpEndpoints
 
                 if (!validationResult.IsValid)
                 {
-                    return TypedResults.Problem(new ProblemDetails()
+                    return TypedResults.Problem(new ProblemDetails
                     {
                         Detail = validationResult.Errors.Aggregate(
                             new StringBuilder(),
@@ -39,7 +39,10 @@ public static class RsvpEndpoints
                 return result.Match<Results<Ok, ProblemHttpResult>>(
                     valid => TypedResults.Ok(),
                     emailExists => TypedResults.Problem(new ProblemDetails()
-                        { Detail = "Email is already registered" }));
+                    {
+                        Title = "Form was already submitted",
+                        Detail = "Email is already registered"
+                    }));
             })
             .RequireCors();
 

@@ -17,11 +17,6 @@ export class RsvpComponent {
   formWasSent: boolean = false;
   errors: string = ''
 
-  handleIsLoading(isLoadingEvent: boolean){
-    console.log('is loading' + isLoadingEvent)
-    this.isLoading = isLoadingEvent
-  }
-
   handleFormSubmit(rsvp: Rsvp){
     this.rsvpService
       .postRvsp(rsvp)
@@ -35,9 +30,9 @@ export class RsvpComponent {
           this.formWasSent = true
         },
         error: (err) => {
-          console.log(err)
           this.isLoading = false
-          this.errors = err.message
+          this.formWasSent = true
+          this.errors = 'Failed to sent form probably because you already sent it.'
         }
     });
   }

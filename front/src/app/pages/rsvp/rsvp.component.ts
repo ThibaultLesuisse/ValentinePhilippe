@@ -16,8 +16,11 @@ export class RsvpComponent {
   isLoading: boolean = false;
   formWasSent: boolean = false;
   errors: string = ''
-
+  
   handleFormSubmit(rsvp: Rsvp){
+
+    this.isLoading = true;
+
     this.rsvpService
       .postRvsp(rsvp)
       .subscribe({
